@@ -1,0 +1,6 @@
+.menu_container{
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../asserts/Images/studentBg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh
+}

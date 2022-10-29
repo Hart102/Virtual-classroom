@@ -1,0 +1,140 @@
+:root{
+    --Mouau-green: #008000;
+    --White: #fff;
+}
+
+input, .input-field-container{
+    border: none !important;
+    width: 100% !important;
+    background: transparent !important;
+}
+
+input:active, input:hover, input:focus{
+    outline: 0px !important;
+    -webkit-appearance: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+
+p, label {
+    color: #999;
+}
+
+p{
+    font-size: 12px;
+}
+
+.form-container{
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../asserts/Images/studentBg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-container .container{
+    max-width: 100%;
+    height: 100vh;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+.Account-container form{
+    height: 100vh !important;
+}
+
+.input-field{
+    border-bottom: 2px solid var(--Mouau-green);
+    border-radius: 10px;
+}
+
+.form-icon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.form-icon img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+
+/* /////////////////////////////////// */
+.Login{
+    left: -100%;
+    height: 100% !important;
+    top: 0;
+    position: absolute;
+    transition: 0.3s;
+    z-index: 999;
+    background: var(--White);
+    transform: scale(0);
+}
+
+.login-active{
+    transform: scale(1);
+    left: 0;
+}
+
+/* SELECT CLASS OPTION  */
+.login .form-control, select {
+    border: none !important;
+    border-bottom: 2px solid var(--Mouau-green) !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+}
+
+
+
+
+/* ///////////////////////////////// */
+.cover-container{
+    display: flex;
+    align-items: center;
+        
+}
+
+.Cover{
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+
+}
+
+.Cover-hide{
+    transform: scale(0);
+}
+
+
+
+
+/* ////////////////////////////////// */
+.SignUp{
+    right: -300%;
+    transition: 0.3s;
+    position: absolute;
+    z-index: 999;
+    top: 0 !important;
+}
+
+.SignUp-active{
+    right: 0% !important;
+}
+
+
+.alert{
+    transition: 0.3s;
+}
+
+
+.cusor{
+    cursor: pointer;
+}
+
+@media(min-width: 1440px) {
+    .login-active{
+        left: 0;
+    }
+}

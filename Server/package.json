@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "virtual classroom",
+  "main": "app.js",
+  "scripts": {
+    "test": "app",
+    "dev": "nodemon app"
+  },
+  "author": "Hart",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.7.0",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.3",
+    "uuid": "^9.0.0"
+  }
+}

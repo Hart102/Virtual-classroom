@@ -1,0 +1,122 @@
+:root{
+    /* COLORS  */
+    --Ash: #747486;
+    --Blue: #0d71eb;
+    --Orange: #ff742e;
+    --White: #fff;
+
+    --Mouau-yellow: #f5e405;
+    --Mouau-green: #105933;
+}
+
+/* // #105933  // mouau green
+// #f5e405 mouau yellow
+// #f3f3f3 mouau ash */
+
+body{
+    font-family: roboto !important;
+}
+
+
+.menu-container, .Generate-link, .Join-meeting{
+    transition: 0.2s;
+}
+
+.Generate-link select{
+    color: var(--Mouau-yellow) !important;
+}
+
+.active{
+    transform: scale(0);
+}
+
+
+/*////////////////// MENU COMPONENTS STYLING////////////////// */
+.icon-bg, .video{
+    width: 100px;
+    height: 100px;
+    margin: 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Blue);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.video{
+    background: var(--Orange);
+}
+
+.icon-bg .fa-video{
+    color: var(--White);
+}
+
+.icon-bg .fa-plus, .fa-share, .fa-share-alt{
+    color: var(--Blue);
+    background: var(--White);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+
+
+/* ////////////////GENERATE LINK STYLING SECTION /////////////// */
+.Generate-link, .Join-meeting{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--White) !important;
+    right: 0;
+}
+
+.Generate-link, .Join-meeting{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    margin: auto;
+    max-width: 100%;
+}
+
+.Join-meeting .form-control{
+    background: transparent !important;
+}
+
+.Join-meeting .form-control{
+    color: var(--White) !important;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--White) !important;
+    opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--White) !important;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--White) !important;
+}
+
+
+
+
+
+/* ///////////////////////// BTN COMPONENT //////////////////////// */
+.BtnComponent .btn{
+    border-radius: 0 !important;
+}
+
+
+#link-container{
+    background: var(--Mouau-yellow) !important;
+}
+
+.fa-copy:active{
+    color: var(--White) !important;
+}
