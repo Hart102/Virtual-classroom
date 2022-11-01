@@ -4,7 +4,7 @@ import io from 'socket.io-client'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { CoverPage, ClickedOnSignuP } from '../../Actions'
+import { CoverPage } from '../../Actions'
 
 // CUSTOM MODUELS /////////////////////////////////
 import * as CustomModule from '../ValidateForm/Validate'
@@ -27,44 +27,23 @@ const Login = () => {
   /////////////////////////////////////////////////
   const [errorMsg, setMsg] = useState(''),
   [firstname, setName] = useState(''),
-  [pwd, setPwd] = useState(''),
-  [eventRoom, setEventRoom] = useState(''),
+  [password, setPwd] = useState(''),
+  [role, setRole] = useState(''),
 
   user = {
     firstname,
-    pwd,
-    eventRoom
+    password,
+    role
   };
 
-  /////////////////////////////////////////////
-  const validateForm = (e) => {
+  //////////////////////////// LOGIN FUNCTION
+  const validateForm = (e) => { 
     e.preventDefault()
-   
-    if (CustomModule.validateInput('firstname').error) {
-      setMsg(CustomModule.validateInput('firstname').error) 
+    socket.emit('Login', user)
 
-    }else{
-      setName(CustomModule.validateInput('firstname'));
-
-      if (CustomModule.validateInput('password', 4).error) {
-        setMsg(CustomModule.validateInput('password', 4).error)
-      }
-
-      if (!CustomModule.validateInput('password', 4).error) {
-        setPwd(CustomModule.validateInput('password', 4));
-      }
-    }
-    
-    //////////////////////////////////////////////////////////////
-    if (firstname == '' || pwd == '' || eventRoom == ''){
-      setMsg('class cannot be empty')
-      
-    }else{
-      socket.emit('Login', user)
-      socket.on('LoginMsg', (response) => {
-        {response != 'true' ? setMsg(response.msg) : navigation('/classroom', {state: 'true'})}
-      })
-    }
+    socket.on('LoginMsg', (response) => {
+      {response.msg != 'true' ? setMsg(response.msg) : navigation('/classroom', {state: response})}
+    })
   }
 
 
@@ -80,17 +59,26 @@ const Login = () => {
 
 
         <div className="px-4 my-4">
-          <InputField name={'firstname'} id={'firstname'} image={userImg} onchange={() => setMsg('')}/>
-          <InputField name={'password'} id={'password'} image={lockImg} onchange={() => setMsg('')}/>
-          <select name="class" className='form-control py-3 mt-4' onChange={(e) => {
-            setEventRoom(e.target.value)
-            setMsg('')
-          }}>
-            <option value="" defaultValue={false} disabled={false}>Select class</option>
-            <option value="ss1">SS1</option>
-            <option value="ss2">SS2</option>
-            <option value="ss3">SS3</option>
-          </select>
+          <InputField type={'text'} name={'firstname'} id={'firstname'} image={userImg} onchange={(e) => {
+            setName(e.target.value)
+            setMsg('')}}
+          />
+          <InputField type={'password'} name={'password'} id={'password'} image={lockImg} onchange={(e) => {
+            setPwd(e.target.value)
+            setMsg('')}}
+          />
+        </div>
+
+        <div className="role d-flex justify-content-between  px-4">
+          <span className="d-flex align-items-baseline cusor">
+            <input type="radio" name="role" value={'staff'} id='staff' onClick={(e) => setRole(e.target.value)}/>
+            <label htmlFor="staff">Staff</label>
+          </span>
+
+          <span className="d-flex align-items-baseline cusor">
+            <input type="radio" name="role" value={'student'} id='student' onClick={(e) => setRole(e.target.value)}/>
+            <label htmlFor="student">Student</label>
+          </span>
         </div>
 
         <div className="d-flex justify-content-center px-4">

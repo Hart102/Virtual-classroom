@@ -16,6 +16,7 @@ export const convertToLowerCase = str => str.toLowerCase();
 export const elementSelector = element => document.getElementById(element);
 
 
+
 // TIME FUNCTION ////////////////////////////////
 export const timeFunction = () => {
     let today = new Date(),
@@ -26,31 +27,4 @@ export const timeFunction = () => {
     
     let time = today.toLocaleString("en-US", options)
     return time
-}
-
-
-
-
-
-
-
-// FORM VALIDATION FUNCTION ///////////////////////////////////////////
-export const validateInput = (element, inputLength) => {
-    let selectedElement = elementSelector(`${element}`);
-
-    if (selectedElement.value.length == '') {
-        return {
-            error: `${selectedElement.name}, cannot be empty`
-        }
-    }
-
-    if (selectedElement.value.length < inputLength) {
-        return {
-            error: `${selectedElement.name}, cannot be less than ${inputLength}`
-        }
-        
-    }else{
-        return selectedElement.value
-    }
-
 }

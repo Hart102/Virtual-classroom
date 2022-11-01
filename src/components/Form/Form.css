@@ -9,13 +9,6 @@ input, .input-field-container{
     background: transparent !important;
 }
 
-input:active, input:hover, input:focus{
-    outline: 0px !important;
-    -webkit-appearance: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
 
 p, label {
     color: #999;
@@ -104,7 +97,8 @@ p{
 }
 
 .Cover-hide{
-    transform: scale(0);
+    /* transform: scale(0); */
+    opacity: 0.2;
 }
 
 

@@ -26,56 +26,29 @@ const SignUp = () => {
   const [errorMsg, setErrorMsg] = useState('')
   const [firstname, setFirstname] = useState('')
   const [lastname, setLastname] = useState('')
-  const [pwd, setPwd] = useState('')
+  const [password, setPwd] = useState('')
 
-  const userInfo = {
+  const userInfo = { // CONVERTING USER INPUT TO LOWERCASE
     firstname: customModule.convertToLowerCase(firstname),
     lastname: customModule.convertToLowerCase(lastname),
-    pwd: customModule.convertToLowerCase(pwd)
+    password: customModule.convertToLowerCase(password)
   }
 
-  const handleSignup = () => {
+  const handleSignup = () => { // SIGN UP FUNCTION
+    socket.emit('Signup', userInfo)
     
-    if (customModule.validateInput('passWord', 4).error) {
-      setErrorMsg(customModule.validateInput('passWord', 4).error)
+    socket.on('Signup', res => {
+      if (res != 'true') {
+        setErrorMsg(res)
 
-    }else {
-      setPwd(customModule.validateInput('passWord', 4));
-    }
-
-    if (customModule.validateInput('lastName').error) {
-      setErrorMsg(customModule.validateInput('lastName').error)
-
-    }else {
-      setLastname(customModule.validateInput('lastName'));
-    }
-    
-
-    if (customModule.validateInput('firstName').error) {
-      setErrorMsg(customModule.validateInput('firstName').error) 
-
-    }else{
-      setFirstname(customModule.validateInput('firstName'));
-      /////////////////////////////////////////////////////////////////
-      if (firstname.length != 0 && pwd.length != 0) {
-        socket.emit('Signup', userInfo) 
-
-        socket.on('Signup', (res) => { // DISPLAYING THE LOGIN FOR WHEN A USER SIGNUP SUCCESSFULLY
-          if (res == 'true') {
-            dispatch(ClickedOnSignIn())
-
-            customModule.elementSelector('firstName').value = ''
-            customModule.elementSelector('lastName').value = ''
-            customModule.elementSelector('passWord').value = ''
-          }
-        })
+      }else{
+        dispatch(ClickedOnSignIn())
+        customModule.elementSelector('firstName').value = ''
+        customModule.elementSelector('lastName').value = ''
+        customModule.elementSelector('passWord').value = ''
       }
-    }
-
-
-    
+    })
   }
-
  
 
 
@@ -92,14 +65,26 @@ const SignUp = () => {
         />
 
         <div className="px-4 my-5">
-          <InputField name={'firstname'} id={'firstName'} image={userImg} onchange={() => setErrorMsg('')}/>
-          <InputField name={'lastname'} id={'lastName'} image={userImg} onchange={() => setErrorMsg('')}/>
-          <InputField name={'password'} id={'passWord'} image={lockImg} onchange={() => setErrorMsg('')}/>
+          <InputField type={'text'} name={'firstname'} id={'firstName'} image={userImg} onchange={(e) => {
+            setFirstname(e.target.value)
+            setErrorMsg('')}}
+          />
+
+          <InputField type={'text'} name={'lastname'} id={'lastName'} image={userImg} onchange={(e) => {
+            setLastname(e.target.value)
+            setErrorMsg('')}}
+          />
+
+          <InputField type={'password'} name={'password'} id={'passWord'} image={lockImg} onchange={(e) => {
+            setPwd(e.target.value)
+            setErrorMsg('')}}
+          />
 
           <div className="d-flex justify-content-center">
-            <div className="btn btn-block px-5 btn-success text-white py-2 font-weight-bold mt-5" onClick={() => {
+            <button className="btn btn-block px-5 btn-success text-white py-2 font-weight-bold mt-5" onClick={(e) => {
+              e.preventDefault()
               handleSignup()
-            }}>Sign up</div>
+            }}>Sign up</button>
           </div>
 
           <div className='text-center my-4'>

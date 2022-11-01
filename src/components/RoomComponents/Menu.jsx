@@ -1,15 +1,23 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { menuAction } from '../../Actions';
 
-const Menu = () => {
-    const menuActionTracker = useSelector(state => state.MenuActionTracker)
-    const dispatch = useDispatch();
 
+
+
+
+const Menu = ({ role }) => {
+    /////////////////////////////////////////////
+    const menuActionTracker = useSelector(state => state.MenuActionTracker),
+    dispatch = useDispatch();
+
+
+
+    /////////////////////////////////////////
   return (
     <div className={menuActionTracker != "" ? "active menu-container container py-5 d-flex flex-column align-items-center" : "menu-container container py-5 d-flex flex-column align-items-center"}>
 
         <div className="d-flex text-center mt-5">
-            <span>
+            <span className={role == 'staff' ? 'd-block' : 'd-none'}>
                 <div className="video mx-lg-5" onClick={() => dispatch(menuAction('NEW_MEETING'))}>
                     <i className='fa fa-video fa-3x text-white'></i>
                 </div>

@@ -17,6 +17,12 @@ body{
     font-family: roboto !important;
 }
 
+.menu_container{
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../asserts/Images/studentBg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh
+}
 
 .menu-container, .Generate-link, .Join-meeting{
     transition: 0.2s;
@@ -85,25 +91,6 @@ body{
 .Join-meeting .form-control{
     background: transparent !important;
 }
-
-.Join-meeting .form-control{
-    color: var(--White) !important;
-}
-
-.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--White) !important;
-    opacity: 1; /* Firefox */
-}
-
-.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--White) !important;
-}
-
-.form-control::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--White) !important;
-}
-
-
 
 
 

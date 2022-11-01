@@ -1,6 +1,6 @@
 import io from 'socket.io-client'
+import { menuAction } from '../../Actions';
 import { useDispatch, useSelector } from 'react-redux'
-// import { menuAction } from '../../Actions';
 import Button from '../Button'
 import * as CustomModule from '../ValidateForm/Validate'
 import { useState } from 'react'
@@ -13,6 +13,7 @@ const JoinMeeting = () => {
 
   const menuActionTracker = useSelector(state => state.MenuActionTracker),
   socket = io.connect('http://localhost:5000', CustomModule.connectionOptions),
+  dispatch = useDispatch(),
   [eventLink, setEventLink] = useState(''),
   [errorMsg, setError] = useState('');
 
@@ -22,16 +23,21 @@ const JoinMeeting = () => {
       socket.emit('joinEvent', eventLink)
       socket.on('active_users', (res) => {res.error ? setError(res.error) : navigation('/meeting/room', {state: res})})
 
+      
     }else{
       setError('event link must be provided')
     }
   }
 
   return (
-    <section className={menuActionTracker == 'JOIN_MEETING' ? 'Join-meeting d-flex1 align-items-center1 justify-content-center1' : 'active Join-meeting'}>
+    <section className={menuActionTracker == 'JOIN_MEETING' ? 'Join-meeting' : 'active Join-meeting'}>
         
-        <form className="form-group p-5">
-          <input type="text" className="form-control p-3 border bg-white my-3" placeholder='Enter Event Link' onChange={(e) => {
+        <form className="form-group p-4 bg-white">
+          <div className="closing_tab d-flex justify-content-end">
+            <div className="fa fa-times text-dark cusor p-2" onClick={() => dispatch(menuAction(''))}></div>
+          </div>
+
+          <input type="text" className="form-control p-3 border bg-white my-4" placeholder='Enter Event Link' onChange={(e) => {
               setEventLink(e.target.value)
               setError('')
             }}/>

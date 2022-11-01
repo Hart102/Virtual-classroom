@@ -1,6 +1,107 @@
-.menu_container{
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../asserts/Images/studentBg.jpg') no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100vh
+/* body{
+    height: 100vh;
+    background: #f1f6f9 !important;
+} */
+/* ///////////////////// CHAT CONTAINER ONE ////////////// */
+/* .chat_container .container_one{
+    width: 5000px;
+    max-width: 100%;
+    position: relative;
 }
+
+.chat_container .container_one .tutors_container{
+    position: relative;
+    width: 100%;
+    height: 40vh;
+}
+
+.chat_container .container_one .tutors_container img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ///////////////////// CHAT CONTAINER TWO /////////////////////////// */
+/* .chat_container .container_two{
+    width: 70%;
+    height: 80vh;
+    position: relative;
+}
+
+.chat_container .container_two .participants_container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+.chat_container .container_two .participants_container::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    border-radius: 10px;
+} */
+  
+
+/* Handle */
+/* .chat_container .container_two .participants_container::-webkit-scrollbar-thumb {
+    height: 2px;
+    background: #fff;
+}
+
+
+.chat_container .container_two .participants_container .participants_img{
+    width: 10vw;
+    height: 15vh;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.chat_container .container_two .participants_container .participants_img img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 3px solid #ecedef;
+    border-radius: 8px;
+} */
+
+
+
+/* /////////////////////////  BOARD  ///////////////////////////// */
+/* .board{
+    height: 70vh;
+}
+@media(max-width: 375px) {
+
+    .chat_container .container_two{
+        width: 100%;
+        background: #ecedef;
+    }
+} */
+
+
+/* ////////////////////// MORE MENU //////////////////// */
+/* .more_menu{
+    z-index: 999;
+    position: absolute;
+    right: 0;
+    padding: 2em 1em;
+    bottom: 0;
+} */
+
+
+
+/* /////////////////// TASK BAR //////////////////////// */
+/* .task_bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    position: fixed;
+}
+
+.task_bar i{
+    background: #ecedef;
+    padding: 1em;
+    border-radius: 50px;
+} */
