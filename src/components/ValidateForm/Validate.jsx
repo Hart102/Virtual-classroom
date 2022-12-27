@@ -16,6 +16,16 @@ export const convertToLowerCase = str => str.toLowerCase();
 export const elementSelector = element => document.getElementById(element);
 
 
+// View password function 
+export const view_password = (element) => {
+  if (elementSelector(element).type == 'password') {
+    elementSelector(element).type = 'text'
+  }else{
+    elementSelector(element).type = 'password'
+  }
+}
+
+
 
 // TIME FUNCTION ////////////////////////////////
 export const timeFunction = () => {

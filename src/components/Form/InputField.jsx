@@ -1,15 +1,10 @@
-const InputField = ({type, name, id, image, onchange}) => {
+const InputField = ({type, name, id, image, onchange, display, viewPassword, placeholder}) => {
+
   return (
 
-    <div className="input-field d-flex mt-3">
-        <div className="form-icon">
-          <img src={image}  />
-        </div>
-
-        <div className="input-field-container ml-2">
-          <label htmlFor={name} className='text-capitalize'>{name}</label>
-          <input name={name} id={id} type={type}  className="form-control p-0" onChange={onchange}/>
-        </div>
+    <div className="input-field d-flex align-items-center my-5 shadow-sm border-bottom px-4">
+          <input name={name} id={id} type={type}  className="form-control py-3 col-md-10" onChange={onchange} placeholder={placeholder}/>
+          <i className="fa fa-eye" style={{display: `${display}`}} onClick={viewPassword}></i>
     </div>
   )
 }

@@ -49,7 +49,7 @@ const GenerateLink = () => {
                 <p className="meeting-link text-truncate h6 text-dark text-uppercase" id='meeting-link'>{generatedLink}</p>
                 <i className="fa fa-copy text-dark cusor" onClick={() => copy()} title='Click to copy Link'></i>
             </div>
-            <button className='bg-success btn btn-block font-weight-bold text-white mt-lg-0 mt-2 py-3 text-uppercase border-bottom shadow' onClick={generateMeetingLink}>Generate</button>
+            <button className='bg-success btn col-md-12 font-weight-bold text-white mt-lg-0 mt-2 py-3 text-uppercase border-bottom shadow' onClick={generateMeetingLink}>Generate</button>
             <div className={errorMsg == "" ? "active alert" : "alert text-warning p-2 text-center"}>{errorMsg}</div>
         </form>
     </section>

@@ -3,6 +3,10 @@
     --White: #fff;
 }
 
+/* *{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+} */
+
 input, .input-field-container{
     border: none !important;
     width: 100% !important;
@@ -36,9 +40,29 @@ p{
     height: 100vh !important;
 }
 
+.form-container .btn{
+    border-radius: 30px !important;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)); */
+}
+
+.form-container .Cover .btn-1{
+    border-radius: 30px !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)) !important;
+}
+
+.form-container .Cover .btn-1:hover, .form-container .Cover .btn-2:hover{
+    background: white !important;
+    color: #000 !important;
+}
+
+.form-container .Cover .btn-2{
+    border-radius: 30px !important;
+    background: transparent !important;
+    color: white !important;
+}
+
 .input-field{
-    border-bottom: 2px solid var(--Mouau-green);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .form-icon{

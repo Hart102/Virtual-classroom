@@ -4,8 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import '../src/asserts/CSS/fontawesome-free-5.13.0-web/css/all.min.css'
-import '../src/asserts/CSS/bootstrap.min.css'
+// import '../src/asserts/CSS/fontawesome-free-5.13.0-web/css/all.min.css'
+// import '../src/asserts/CSS/bootstrap.min.css'
 import User from "./pages/User";
 import ClassRoom from "./pages/ClassRoom";
 import MeetingRoom from "./pages/MeetingRoom/MeetingRoom";

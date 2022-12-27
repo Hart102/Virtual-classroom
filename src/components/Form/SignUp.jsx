@@ -29,9 +29,9 @@ const SignUp = () => {
   const [password, setPwd] = useState('')
 
   const userInfo = { // CONVERTING USER INPUT TO LOWERCASE
-    firstname: customModule.convertToLowerCase(firstname),
-    lastname: customModule.convertToLowerCase(lastname),
-    password: customModule.convertToLowerCase(password)
+    firstname,
+    lastname,
+    password
   }
 
   const handleSignup = () => { // SIGN UP FUNCTION
@@ -65,31 +65,51 @@ const SignUp = () => {
         />
 
         <div className="px-4 my-5">
-          <InputField type={'text'} name={'firstname'} id={'firstName'} image={userImg} onchange={(e) => {
+          <InputField 
+            type={'text'} 
+            display={'none'}
+            name={'firstname'} 
+            id={'firstName'} 
+            placeholder={'Firstname'}
+            image={userImg} 
+            onchange={(e) => {
             setFirstname(e.target.value)
             setErrorMsg('')}}
           />
 
-          <InputField type={'text'} name={'lastname'} id={'lastName'} image={userImg} onchange={(e) => {
+          <InputField 
+            type={'text'} 
+            display={'none'}
+            name={'lastname'} 
+            id={'lastName'} 
+            placeholder={'Lastname'}
+            image={userImg} 
+            onchange={(e) => {
             setLastname(e.target.value)
             setErrorMsg('')}}
           />
 
-          <InputField type={'password'} name={'password'} id={'passWord'} image={lockImg} onchange={(e) => {
+          <InputField 
+            type={'password'} 
+            display={'block'}
+            name={'password'} 
+            id={'passWord'} 
+            placeholder={'Password'}
+            viewPassword={() => customModule.view_password('passWord')}
+            image={lockImg} 
+            onchange={(e) => {
             setPwd(e.target.value)
             setErrorMsg('')}}
           />
 
-          <div className="d-flex justify-content-center">
-            <button className="btn btn-block px-5 btn-success text-white py-2 font-weight-bold mt-5" onClick={(e) => {
-              e.preventDefault()
-              handleSignup()
-            }}>Sign up</button>
-          </div>
+          <button className="btn btn-block px-5 shadow border py-3 font-weight-bold mt-3 col-md-12" onClick={(e) => {
+            e.preventDefault()
+            handleSignup()
+          }}>Sign up</button>
 
           <div className='text-center my-4'>
             <i className="text-danger my-5 text-capitalize">{errorMsg}</i>
-            <div className='text-success cusor' onClick={() => dispatch(CoverPage())}>Already have an account ?</div>
+            <div className='cusor' onClick={() => dispatch(CoverPage())}>Already have an account ?</div>
           </div>
         </div>
       </div>

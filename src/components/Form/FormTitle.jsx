@@ -3,8 +3,8 @@ const FormTitle = ({Title, Text}) => {
   return (
     <div className="d-flex justify-content-around align-items-baseline px-4">
       <div className="text-center">
-        <h4 className="h4 font-weight-bold text-uppercase text-success">{Title}</h4>
-        <p className="text-capitalize text-success h5">{Text}</p>
+        <p className="text-uppercase text-dark h6">{Title}</p>
+        <b className="text-dark h6">{Text}</b>
       </div>
     </div>
   )

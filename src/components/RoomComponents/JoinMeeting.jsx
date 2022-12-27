@@ -41,7 +41,7 @@ const JoinMeeting = () => {
               setEventLink(e.target.value)
               setError('')
             }}/>
-          <button className="btn py-3 btn-block btn-success font-weight-bold border-bottom shadow" onClick={(e) => {
+          <button className="btn py-3 col-md-12 btn-success font-weight-bold border-bottom shadow" onClick={(e) => {
             e.preventDefault()
             joinEvent()
           }}>JOIN MEETING</button>
