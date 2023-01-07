@@ -21,7 +21,7 @@ const JoinMeeting = () => {
   const joinEvent = () => { // SUBMIT EVENT LINK FUNCTION
     if (eventLink !== '') {
       socket.emit('joinEvent', eventLink)
-      socket.on('active_users', (res) => {res.error ? setError(res.error) : navigation('/meeting/room', {state: res})})
+      socket.on('active_users', (res) => {res.error ? setError(res.error) : navigation('/meeting/newclass', {state: res})})
 
       
     }else{

@@ -10,6 +10,7 @@ import User from "./pages/User";
 import ClassRoom from "./pages/ClassRoom";
 import MeetingRoom from "./pages/MeetingRoom/MeetingRoom";
 import NewClass from "./pages/NewClass";
+import JoinMeeting from "./components/RoomComponents/JoinMeeting";
 
 // import reportWebVitals
 // import { createStore } from "redux";
@@ -55,8 +56,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<User />} />
         <Route path="/classroom" element={<ClassRoom />} />
-        <Route path="/meeting/room" element={<MeetingRoom />} />
+        <Route path="/meeting/joinmeeting" element={<JoinMeeting />} />
         <Route path="/meeting/newclass" element={<NewClass />} />
+
+
+
+
+        {/* <Route path="/meeting/room" element={<MeetingRoom />} /> */}
       </Routes>
     </BrowserRouter>
   )

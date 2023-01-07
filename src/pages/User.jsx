@@ -1,6 +1,4 @@
-import { useSelector } from 'react-redux'
-
-import { useLocation } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import '../components/Form/Form.css'
 import Login from '../components/Form/Login'
 import Cover from "../components/Form/Cover"
@@ -17,6 +15,8 @@ const User = () => {
         <Cover />
         <SignUp />
       </div>
+
+      <Outlet />
     </section>
   )
 }
