@@ -57,7 +57,9 @@ const SignUp = () => {
 
   return (
     <form className={changeTracker == "SIGNUP_CLICKED" ? "SignUp-active SignUp px-lg-5 bg-white col-md-4" : "SignUp py-5"}>
-    
+      <div>
+        <i className="fa fa-times fa-2x cusor" onClick={() => dispatch(CoverPage())}></i>
+      </div>
       <div className="d-flex flex-column py-5">
         <FormTitle 
           Title={'Register'} 
@@ -110,7 +112,7 @@ const SignUp = () => {
 
           <div className='text-center my-4'>
             <i className="text-danger my-5 text-capitalize">{errorMsg}</i>
-            <div className='cusor' onClick={() => dispatch(CoverPage())}>Already have an account ?</div>
+            {/* <div className='cusor' onClick={() => dispatch(CoverPage())}>Already have an account ?</div> */}
           </div>
         </div>
       </div>
