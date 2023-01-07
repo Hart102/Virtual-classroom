@@ -14,7 +14,7 @@ const Cover = () => {
     <section className="py-5">
 
       <form className={changeTracker != 'COVER_PAGE_CLICKED' ? 'Cover-hide Cover' : 'Cover py-5'}>
-          <div >
+          <div>
             <div className='my-3 text-white text-center my-lg-0'>
               <h3>Get started</h3>
               <span className='h6'>with Signing up or Sign in</span>

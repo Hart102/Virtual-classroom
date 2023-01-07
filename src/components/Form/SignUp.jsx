@@ -57,6 +57,7 @@ const SignUp = () => {
 
   return (
     <form className={changeTracker == "SIGNUP_CLICKED" ? "SignUp-active SignUp px-lg-5 bg-white col-md-4" : "SignUp py-5"}>
+    
       <div className="d-flex flex-column py-5">
         <FormTitle 
           Title={'Register'} 

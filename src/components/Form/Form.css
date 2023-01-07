@@ -33,7 +33,7 @@ p{
     height: 100vh;
 
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .Account-container form{
@@ -114,10 +114,10 @@ p{
 }
 
 .Cover{
+    width: 100%;
     transition: 0.3s;
     display: flex;
     align-items: center;
-
 }
 
 .Cover-hide{
